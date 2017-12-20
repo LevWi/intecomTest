@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace intecomTest
 {
+    // Ячейка в массиве с полями "время" и "значение"
     struct ArhivePoint
     {
         public double Data { private set; get; }
@@ -19,6 +20,12 @@ namespace intecomTest
         }
     }
 
+    /* Архив
+     * 
+     * Работа по кругу. Инициализируется с конкретным размером
+     * При переполнении начинает перетирать старые элементы, начиная с нулевого
+     * 
+     */
     class TimeArhive {
 
         bool filled = false;
@@ -31,6 +38,7 @@ namespace intecomTest
             arhiveArr = new ArhivePoint[size];
         }
 
+        // Добавить элемент в конец
         public void EnqueueLast(ArhivePoint elem)
         {
             currentIndex++;
@@ -59,7 +67,8 @@ namespace intecomTest
             get { return currentIndex < 0; }
         }
 
-        // ближайший индекс в массиве по временной точке
+        // Поиск ближайшего индекса в массиве по временной точке
+        // недоделал...
         public int GetNearestIndexFromTimePoint(DateTime dt)
         {
             if (this.Empty){
