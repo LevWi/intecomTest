@@ -108,6 +108,7 @@ namespace intecomTest
             }
         }
 
+        // недоделал...
         private int NextIndex(int index)
         {            
             if (filled)
